@@ -12,7 +12,12 @@ let playerPoints = 5000;
 
 // Helper function to roll a single die
 const rollDie = () => Math.floor(Math.random() * 6) + 1;
-
+app.get("/", async (req, res, next) => {
+  return res.status(200).json({
+    title: "Express Testing",
+    message: "The app is working properly!",
+  });
+});
 app.post('/roll', (req, res) => {
   const { betAmount, betType } = req.body;
 
